@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hire-U — Portafolio</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <header class="hire-u">
+    <div class="hire-u-inner">
+      <img src="img/logo 5.png" alt="Logo Hire-U" class="logo-main" />
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about">
+      <h2>¿Qué es Hire-U?</h2>
+      <p>
+        Nuestro proyecto tiene como eje central la iniciativa para llevar a cabo una aplicación denominada
+        <strong>Hire-U</strong> que será accesible para cualquier dispositivo y que está orientada en particular
+        para los egresados de la Universidad San Buenaventura y para los propósitos de esta universidad...
+      </p>
+      <p class="summary">
+        <strong>Resumen del proyecto:</strong> El trabajo documenta la creación de una aplicación tipo red social profesional...
+      </p>
+    </section>
+
+    <section class="gallery">
+      <h2>Mockups y recursos</h2>
+      <div class="grid">
+        <figure>
+          <img src="img/Captura de pantalla 2025-10-14 233536.png" alt="Mockup 1">
+          <figcaption>Mockup — Inicio / Login</figcaption>
+        </figure>
+        <figure>
+          <img src="img/Captura de pantalla 2.png" alt="Mockup 2">
+          <figcaption>Mockup — Menú principal</figcaption>
+        </figure>
+        <figure>
+          <img src="img/Captura de pantalla 3.png" alt="Mockup 3">
+          <figcaption>Mockup — Registro</figcaption>
+        </figure>
+      </div>
+
+      <h3>Personaje / Mascota</h3>
+      <div class="mascotas">
+        <img src="img/pacho.png" alt="Pacho Mascota" class="mascota">
+        <img src="img/paco.jpg" alt="Paco Mascota" class="mascota">
+      </div>
+
+      <h3>Imágenes adicionales</h3>
+      <div class="grid">
+        <figure>
+          <img src="img/portafolio inicio.jpg" alt="Portafolio inicio">
+          <figcaption>Portafolio / Evento USB</figcaption>
+        </figure>
+        <figure>
+          <img src="img/logo.png" alt="Logo secundario">
+          <figcaption>Sello USB</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN DE IMÁGENES -->
+    <section class="extra-gallery">
+      <h2>Galería complementaria</h2>
+      <p>En esta sección se presentan más imágenes del proceso de diseño, eventos y desarrollo del proyecto Hire-U.</p>
+
+      <div class="grid">
+        <figure>
+          <img src="img/Muckup laptop 1.png" alt="Diseño adicional 1">
+          <figcaption>Muckup laptop inicio de sesion</figcaption>
+        </figure>
+        <figure>
+          <img src="img/Muckup laptop 2.png" alt="Diseño adicional 2">
+          <figcaption>Muckup laptop registarse</figcaption>
+        </figure>
+        <figure>
+          <img src="img/Muckup laptop 3.png" alt="Diseño adicional 3">
+          <figcaption>Muckup laptop Olvido su correo o contraseña — Configuración</figcaption>
+        </figure>
+        <figure>
+          <img src="img/Muckup laptop 4.png" alt="Diseño adicional 4">
+          <figcaption>Muckup primera interfaz de pagina HIRE-U</figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- FIN NUEVA SECCIÓN -->
+
+    <section class="video-section">
+      <h4>Video speech</h4>
+      <video width="800" height="400" controls>
+        <source src="img/video speech.mp4" type="video/mp4">
+      </video>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <p>Proyecto Hire-U — Universidad San Buenaventura — Autores: Andrés Cardozo, Andrés F. Martínez, Andrés F. Quintero.</p>
+    </div>
+  </footer>
+
+  <div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg" alt="">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll("img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || "imagen ampliada";
+      });
+    });
+
+    closeBtn.onclick = () => { modal.style.display = "none"; };
+    modal.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+  </script>
+</body>
+</html>
